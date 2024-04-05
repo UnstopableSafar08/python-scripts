@@ -13,7 +13,7 @@ fi
 
 echo "Configuring packages... This Process may takes upto 10 Minutes or more..."
 # sudo yum -y -q groupinstall "Development Tools"
-sudo yum install -y -q \
+sudo yum install -qq \
     wget\
     curl \
     telnet\
