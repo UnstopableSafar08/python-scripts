@@ -12,8 +12,8 @@ if [[ $# -eq 0 ]]; then
 fi
 
 echo "Configuring packages... This Process may takes upto 10 Minutes or more..."
-# sudo yum -q -y groupinstall "Development Tools"
-sudo yum install -q -y \
+# sudo yum -y -q groupinstall "Development Tools"
+sudo yum install -y -q \
     wget\
     curl \
     telnet\
@@ -53,7 +53,7 @@ for VER do
 
     echo "Building Python $VER..."
     cd Python-$VER
-    ./configure --enable-optimizations #--with-ensurepip=install
+    ./configure --enable-optimizations --with-ensurepip=install
     make -s -j $(nproc)
 
     echo "Installing Python $VER..."
