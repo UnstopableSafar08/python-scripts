@@ -5,11 +5,22 @@ if [[ $# -eq 0 ]]; then
     exit 2
 fi
 
-echo "Configuring packages..."
-sudo yum install -q -y gcc make zlib-devel bzip2-devel openssl-devel ncurses-devel \
-readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel \
-libuuid-devel sqlite-devel expat-devel libjpeg-devel libpng-devel libtiff-devel \
-freetype-devel
+gcc openssl-devel bzip2-devel libffi-devel zlib-devel wget tar make
+
+echo "Configuring packages... This Process may takes upto 10 Minutes or more..."
+sudo yum install -q -y \
+    wget\
+    curl \
+    telnet\
+    net-tools\
+    traceroute\
+    tar \
+    gcc \
+    openssl-devel \
+    bzip2-devel \
+    libffi-devel \
+    zlib-devel \
+    make
 
 
 cd /tmp
@@ -42,6 +53,17 @@ for VER do
 
     echo "Installing Python $VER..."
     sudo make -s altinstall
+
+    echo "Applying PATH for Python $VER..."
+    echo -e "alias python=/usr/bin/python$VER\nPATH=$PATH:/usr/local/bin/python$VER" >> ~/.bashrc
+    source ~/.bashrc
+    
+    echo "Check versions of Python and pip"
+    python$VER -V
+    pip$VER -V
 done
+
+# echo -e "alias python=/usr/bin/python3\nPATH=$PATH:/usr/local/bin/python3.8" >> ~/.bashrc
+# source ~/.bashrc
 
 echo "All done!"
