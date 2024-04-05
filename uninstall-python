@@ -32,6 +32,7 @@ for VER do
     fi
 
     # Remove files.
+    sudo rm -rf /tmp/Python*
     sudo rm -rf "${BIN_PATH}/2to3-${VER}" \
         "${BIN_PATH}/idle${VER}" \
         "${BIN_PATH}/pip${VER}" \
