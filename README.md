@@ -3,7 +3,7 @@
 ## Installing the Scripts
 
 1. Clone the repo:
-   `git clone https://github.com/parafoxia/python-scripts`
+   `https://github.com/UnstopableSafar08/python-scripts.git`
 2. Make the scripts executable:
    `chmod +x python-scripts/install-python && chmod +x python-scripts/uninstall-python`
 3. Add the scripts to your path by adding the following to your .bashrc/.zshrc/etc.:
