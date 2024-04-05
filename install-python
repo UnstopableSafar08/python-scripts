@@ -1,11 +1,15 @@
-#!/bin/bash
+#! /bin/bash
+##########################################
+# Author : Sagar Malla
+# Date : 2024-April-05
+# Desc : This Script install the python in Any Linux (Fedora)
+# Version : v1.1
+##########################################
 
 if [[ $# -eq 0 ]]; then
-    echo -e "You must provide at least one Python version.\n e.g. sh install-python 3.7.9"
+    echo -e "You must provide at least one Python version.\n e.g. sh install-python 3.7.0"
     exit 2
 fi
-
-gcc openssl-devel bzip2-devel libffi-devel zlib-devel wget tar make
 
 echo "Configuring packages... This Process may takes upto 10 Minutes or more..."
 sudo yum install -q -y \
@@ -48,19 +52,19 @@ for VER do
 
     echo "Building Python $VER..."
     cd Python-$VER
-    ./configure -q --enable-optimizations --with-ensurepip=install --with-system-ffi
+    ./configure -q --enable-optimizations
     make -s -j $(nproc)
 
     echo "Installing Python $VER..."
     sudo make -s altinstall
 
     echo "Applying PATH for Python $VER..."
-    echo -e "alias python=/usr/bin/python$VER\nPATH=$PATH:/usr/local/bin/python$VER" >> ~/.bashrc
+    echo -e "alias python=/usr/bin/python${VER%??}\nPATH=$PATH:/usr/local/bin/python${VER%??}" >> ~/.bashrc
     source ~/.bashrc
     
     echo "Check versions of Python and pip"
-    python$VER -V
-    pip$VER -V
+    python${VER%??} -V
+    pip${VER%??} -V
 done
 
 # echo -e "alias python=/usr/bin/python3\nPATH=$PATH:/usr/local/bin/python3.8" >> ~/.bashrc

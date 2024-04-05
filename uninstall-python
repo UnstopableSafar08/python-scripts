@@ -1,4 +1,10 @@
-#!/bin/bash
+#! /bin/bash
+##########################################
+# Author : Sagar Malla
+# Date : 2024-April-05
+# Desc : This Script Uninstall the python from Any Linux (Fedora)
+# Version : v1.1
+##########################################
 
 BIN_PATH=/usr/local/bin
 LIB_PATH=/usr/local/lib
