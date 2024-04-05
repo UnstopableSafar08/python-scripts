@@ -53,7 +53,7 @@ for VER do
 
     echo "Building Python $VER..."
     cd Python-$VER
-    ./configure --enable-optimizations #--with-ensurepip=install
+    ./configure --enable-optimizations --with-ensurepip=install
     make -s -j $(nproc)
 
     echo "Installing Python $VER..."
