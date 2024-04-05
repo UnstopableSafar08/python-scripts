@@ -1,27 +1,16 @@
 #!/bin/bash
 
 if [[ $# -eq 0 ]]; then
-    echo "You must provide at least one Python version."
+    echo -e "You must provide at least one Python version.\n e.g. sh install-python 3.7.9"
     exit 2
 fi
 
 echo "Configuring packages..."
-sudo yum update -qq && sudo yum upgrade -qq
-sudo yum install -qq \
-    build-essential \
-    libbz2-dev \
-    libffi-dev \
-    libgdbm-dev \
-    liblzma-dev \
-    libncurses5-dev \
-    libnss3-dev \
-    libreadline-dev \
-    libssl-dev \
-    libsqlite3-dev \
-    pkg-config \
-    tk-dev \
-    wget \
-    zlib1g-dev
+sudo yum install -q -y gcc make zlib-devel bzip2-devel openssl-devel ncurses-devel \
+readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel \
+libuuid-devel sqlite-devel expat-devel libjpeg-devel libpng-devel libtiff-devel \
+freetype-devel
+
 
 cd /tmp
 
