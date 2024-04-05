@@ -12,7 +12,7 @@ if [[ $# -eq 0 ]]; then
 fi
 
 echo "Configuring packages... This Process may takes upto 10 Minutes or more..."
-sudo yum -q -y groupinstall "Development Tools"
+# sudo yum -q -y groupinstall "Development Tools"
 sudo yum install -q -y \
     wget\
     curl \
@@ -59,17 +59,17 @@ for VER do
     echo "Installing Python $VER..."
     sudo make -s altinstall
 
-    echo "Installing pip $VER ..."
+    # echo "Installing pip $VER ..."
     # sudo yum install python${VER%??}-pip
-    curl https://bootstrap.pypa.io/get-pip.py | python${VER%??}
+    # curl https://bootstrap.pypa.io/get-pip.py | python${VER%??}
 
-    echo "Applying PATH for Python $VER..."
-    echo -e "alias python=/usr/bin/python${VER%??}\nPATH=$PATH:/usr/local/bin/python${VER%??}" >> ~/.bashrc
-    source ~/.bashrc
+    # echo "Applying PATH for Python $VER..."
+    # echo -e "alias python=/usr/bin/python${VER%??}\nPATH=$PATH:/usr/local/bin/python${VER%??}" >> ~/.bashrc
+    # source ~/.bashrc
     
     echo "Check versions of Python and pip"
     python${VER%??} -V
-    pip${VER%??} -V
+    # pip${VER%??} -V
 done
 
 # echo -e "alias python=/usr/bin/python3\nPATH=$PATH:/usr/local/bin/python3.8" >> ~/.bashrc
