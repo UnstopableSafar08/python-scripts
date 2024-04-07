@@ -2,14 +2,10 @@
 
 ## Installing the Scripts
 
-1. Clone the repo:<br> 
-   `git clone https://github.com/UnstopableSafar08/python-scripts.git`
-3. Make the scripts executable: <br>    
-   `chmod +x python-scripts/install-python && chmod +x python-scripts/uninstall-python`
-5. Add the scripts to your path by adding the following to your .bashrc/.zshrc/etc.:<br>   
-   `PATH=$PATH:/path/to/python-scripts`
-
-7. Apply the changes:<br>`source .bashrc`
+1. Clone the repo:<br> `git clone https://github.com/UnstopableSafar08/python-scripts.git`
+2. Make the scripts executable: <br> `chmod +x python-scripts/install-python && chmod +x python-scripts/uninstall-python`
+3. Add the scripts to your path by adding the following to your .bashrc/.zshrc/etc.:<br> `PATH=$PATH:/path/to/python-scripts`
+4. Apply the changes:<br>`source .bashrc`
 
 ## Installing Python
 
@@ -19,7 +15,7 @@ You can install Python using the following command:
 python-scripts/install-python <ver1> [ver2 ...]
 ```
 
-This builds and installs Python from sources downloaded from the official FTP server.
+This command will Download the Python from the official FTP server and then install the python on the machine.
 While this means you can install any Python version you want, the installation process will take significantly longer.
 Alpha, beta, and release candidate versions can also be installed, and multiple version can be installed at once.
 
