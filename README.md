@@ -13,17 +13,14 @@ You can install Python using the following command:
 
 ```sh
 python-scripts/install-python <ver1> [ver2 ...]
+# For Single Version: python-scripts/install-python 3.8.1
+# For Multiple Version:  python-scripts/install-python 3.8.1 3.9.5 
 ```
 
 This command will Download the Python from the official FTP server and then install the python on the machine.
 While this means you can install any Python version you want, the installation process will take significantly longer.
 Alpha, beta, and release candidate versions can also be installed, and multiple version can be installed at once.
 
-For example:
-
-```sh
-python-scripts/install-python 3.10.7 3.8.0b2 3.11.0rc1
-```
 
 **Note:** If you do not use a Debian-based system, you will need to edit the script to use your distribution's package manager.
 
@@ -33,6 +30,8 @@ You can uninstall Python using the following command:
 
 ```sh
 python-scripts/uninstall-python <ver1> [ver2 ...]
+# For e.g.(single version): python-scripts/uninstall-python 3.8.1
+# For e.g. (Multiple Version): python-scripts/uninstall-python 3.8.1 3.9.5 3.10.2
 ```
 
 This removes all files related to the given Python versions.
@@ -40,7 +39,7 @@ This removes all files related to the given Python versions.
 For example, if you ran the following command...
 
 ```sh
-python-scripts/uninstall-python 3.9
+python-scripts/uninstall-python 3.8
 ```
 
 ...the following directories and files will be deleted:
