@@ -3,9 +3,15 @@
 ## Installing the Scripts
 
 1. Clone the repo:<br> `git clone https://github.com/UnstopableSafar08/python-scripts.git`
-2. Make the scripts executable: <br> `chmod +x python-scripts/install-python && chmod +x python-scripts/uninstall-python`
-3. Add the scripts to your path by adding the following to your .bashrc/.zshrc/etc.:<br> `PATH=$PATH:/path/to/python-scripts`
-4. Apply the changes:<br>`source .bashrc`
+2. Make the scripts executable: <br> `chmod +x python-scripts/install-python && chmod +x python-scripts/uninstall-python && chmod +x python-scripts/openssl-install`
+3.
+> [!IMPORTANT]  
+> Before Install the Python make sure that the latest version of OpenSSL installed.
+> <br>To install OpenSSL run the Script: ```sh python-scripts/openssl-install```
+4. Add the scripts to your path by adding the following to your .bashrc/.zshrc/etc.:<br> `PATH=$PATH:/path/to/python-scripts`
+> [!TIP]
+> `PATH=$PATH:/usr/local/bin/pythonXX`
+5. Apply the changes:<br>`source .bashrc`
 
 ## Installing Python
 
