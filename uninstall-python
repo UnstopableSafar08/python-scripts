@@ -3,7 +3,7 @@
 # Author : Sagar Malla
 # Date : 2024-April-05
 # Desc : This Script Uninstall the python from Any Linux (Fedora)
-# Version : v1.1
+# Version : v1.2
 ##########################################
 
 BIN_PATH=/usr/local/bin
@@ -27,12 +27,12 @@ for VER do
 
     # Check if Python version exists.
     if [[ ! -f "${BIN_PATH}/python${VER}" ]]; then
-        echo "That Python version is not installed, or you have supplied a patch version."
+        echo "The Python${VER} version is not installed, or you have supplied a patch version."
         exit 2
     fi
 
     # Remove files.
-    sudo rm -rf /tmp/Python*
+    sudo rm -rf /tmp/Python*    # Delete the python binary source file from the /tmp/
     sudo rm -rf "${BIN_PATH}/2to3-${VER}" \
         "${BIN_PATH}/idle${VER}" \
         "${BIN_PATH}/pip${VER}" \
@@ -45,4 +45,4 @@ for VER do
         "${LIB_PATH}/python${VER}.pc"
 done
 
-echo "All done!"
+echo "The Python Uninstalling Process has been Done!!!"

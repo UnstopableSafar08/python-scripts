@@ -3,7 +3,7 @@
 # Author : Sagar Malla
 # Date : 2024-April-05
 # Desc : OpenSSL Script
-# Version : v1.1
+# Version : v1.2
 ##########################################
 
 set -x
@@ -26,7 +26,7 @@ make -j $(nproc)
 sudo make install
 sudo ldconfig
 
-# Serup OpenSSL path
+# Setup OpenSSL path
 sudo tee /etc/profile.d/openssl.sh<<EOF
 export PATH=/usr/local/openssl/bin:\$PATH
 export LD_LIBRARY_PATH=/usr/local/openssl/lib:/usr/local/openssl/lib64:\$LD_LIBRARY_PATH

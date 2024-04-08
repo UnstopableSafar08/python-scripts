@@ -3,11 +3,11 @@
 # Author : Sagar Malla
 # Date : 2024-April-05
 # Desc : This Script install the python in Any Linux (Fedora)
-# Version : v1.1
+# Version : v1.2
 ##########################################
 
 if [[ $# -eq 0 ]]; then
-    echo -e "You must provide at least one Python version.\n e.g. sh install-python 3.7.0"
+    echo -e "You must provide at least one Python version.\n e.g. sh python-scripts/install-python 3.8.1"
     exit 2
 fi
 
@@ -75,4 +75,4 @@ done
 # echo -e "alias python=/usr/bin/python3\nPATH=$PATH:/usr/local/bin/python3.8" >> ~/.bashrc
 # source ~/.bashrc
 
-echo "All done!"
+echo "The Python installation Process has been Done!"
