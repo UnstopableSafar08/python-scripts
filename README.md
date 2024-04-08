@@ -27,6 +27,8 @@ This command will Download the Python from the official FTP server and then inst
 While this means you can install any Python version you want, the installation process will take significantly longer.
 Alpha, beta, and release candidate versions can also be installed, and multiple version can be installed at once.
 
+## Output: Installation
+![alt text](https://github.com/UnstopableSafar08/python-scripts/blob/main/Assets/python-installation.png?raw=true)
 
 > [!NOTE]  
 > If you do not use a Debian-based system, you will need to edit the script to use your distribution's package manager.
@@ -63,9 +65,14 @@ python-scripts/uninstall-python 3.8                   # Uninstalling a python ve
 * /usr/local/lib/python3.9
 * /usr/local/lib/python3.9-embed.pc
 * /usr/local/lib/python3.9.pc
+  <br>
+## Output: Uninstall
+![alt text](https://github.com/UnstopableSafar08/python-scripts/blob/main/Assets/python-uninstallation.png?raw=true)
 
-Like when installing Python, multiple versions can be uninstalled at once.
+> [!NOTE]  
+>Like when installing Python, multiple versions can be uninstalled at once.
 
-**Warning:** If you have two installations for a single minor version of Python (i.e. 3.10.1 and 3.10.5), they will both be removed.
-
-**Warning:** Attempting to uninstall Python versions bundled with your OS may render your OS unusable.
+> [!WARNING]
+> **Warning:** If you have two installations for a single minor version of Python (i.e. 3.10.1 and 3.10.5), they will both be removed.<br>
+> **Warning:** Attempting to uninstall Python versions bundled with your OS may render your OS unusable.
+<br><br><br>
