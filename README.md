@@ -2,41 +2,45 @@
 
 ## Installing the Scripts
 
-1. Clone the repo:
-   `git clone https://github.com/UnstopableSafar08/python-scripts.git`
-2. Make the scripts executable:
-   `chmod +x python-scripts/install-python && chmod +x python-scripts/uninstall-python`
-3. Add the scripts to your path by adding the following to your .bashrc/.zshrc/etc.:
-   `PATH=$PATH:/path/to/python-scripts`
-4. Apply the changes:
-   `source .bashrc`
+1. Clone the repo:<br> `git clone https://github.com/UnstopableSafar08/python-scripts.git`
+2. Make the scripts executable: <br> `chmod +x python-scripts/install-python && chmod +x python-scripts/uninstall-python && chmod +x python-scripts/openssl-install`
+3.
+> [!IMPORTANT]  
+> Before Install the Python make sure that the latest version of OpenSSL installed.
+> <br>To install OpenSSL run the Script: ```sh python-scripts/openssl-install```
+4. Add the scripts to your path by adding the following to your .bashrc/.zshrc/etc.:<br> `PATH=$PATH:/path/to/python-scripts`
+> [!TIP]
+> `PATH=$PATH:/usr/local/bin/pythonXX`
+5. Apply the changes:<br>`source .bashrc`
 
 ## Installing Python
 
 You can install Python using the following command:
 
 ```sh
-install-python <ver1> [ver2 ...]
+python-scripts/install-python <ver1> [ver2 ...]
+python-scripts/install-python 3.8.1          # For Single Version of python
+python-scripts/install-python 3.8.1 3.9.5    # For Multiple Version  of python at once
 ```
 
-This builds and installs Python from sources downloaded from the official FTP server.
+This command will Download the Python from the official FTP server and then install the python on the machine.
 While this means you can install any Python version you want, the installation process will take significantly longer.
 Alpha, beta, and release candidate versions can also be installed, and multiple version can be installed at once.
 
-For example:
 
-```sh
-install-python 3.10.7 3.8.0b2 3.11.0rc1
-```
+> [!NOTE]  
+> If you do not use a Debian-based system, you will need to edit the script to use your distribution's package manager.
+<br><br>
 
-**Note:** If you do not use a Debian-based system, you will need to edit the script to use your distribution's package manager.
-
-## Uninstalling Python
+> [!CAUTION]
+>## Uninstalling Python
 
 You can uninstall Python using the following command:
 
 ```sh
-uninstall-python <ver1> [ver2 ...]
+python-scripts/uninstall-python <ver1> [ver2 ...]
+python-scripts/uninstall-python 3.8.1                 # For single version
+python-scripts/uninstall-python 3.8.1 3.9.5 3.10.2    # For Multiple Version 
 ```
 
 This removes all files related to the given Python versions.
@@ -44,7 +48,7 @@ This removes all files related to the given Python versions.
 For example, if you ran the following command...
 
 ```sh
-uninstall-python 3.9
+python-scripts/uninstall-python 3.8                   # Uninstalling a python version 3.8
 ```
 
 ...the following directories and files will be deleted:
